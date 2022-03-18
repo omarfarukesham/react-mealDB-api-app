@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Meals from '../Meals/Meals';
 import './Main.css'
 
-const Main = () => {
+const Main = (props) => {
+const { setCart } = props;
 
    const[meals, setMeal] = useState([])
 
@@ -15,7 +16,7 @@ const Main = () => {
     return (
         <div className='miniComponent'>
             {
-            meals.map(meal => <Meals meal={meal}></Meals>)
+            meals.map(meal => <Meals meal={meal} cartCount={setCart}></Meals>)
             }
         </div>
 
